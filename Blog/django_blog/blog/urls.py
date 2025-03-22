@@ -9,4 +9,5 @@ urlpatterns = [
     path('newpost/',views.newPost,name="newpost"),
     path('mypost/',views.myPost,name="mypost"),
     path('signout/',views.signout,name = "signout"),
+    path('delete/<int:id>/',deletePost,name = "delete_post")
 ]

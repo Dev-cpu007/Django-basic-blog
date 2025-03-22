@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from .models import Posts
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout 
@@ -53,3 +53,8 @@ def myPost(request):
 def signout(request):
     logout(request)
     return redirect('/login')
+
+def deletePost(request,id):
+    post = get_object_or_404(Posts,id=id)
+    post.delete()
+    return redirect('/mypost')
