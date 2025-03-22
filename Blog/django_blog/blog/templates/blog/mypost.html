@@ -53,6 +53,7 @@
                 <br><br>
             </div>
         </article>
+        <a href="{%url "delete" post.id %}" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
         {% endfor %}
     </div>
 </div>
